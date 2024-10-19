@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
 import XLSX from "xlsx";
-import dotenv from "dotenv"; // Import dotenv here
+import dotenv from "dotenv";
 import userroute from "./Routes/users.route.js";
 import connectionFunc from "./DatabaseConnection/database.connection.js";
 
-dotenv.config(); // Configure dotenv here
+dotenv.config();
 
 const app = express();
 app.use(express.json());

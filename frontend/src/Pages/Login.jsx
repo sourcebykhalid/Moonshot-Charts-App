@@ -56,7 +56,6 @@ const Login = () => {
         </Box>
 
         <Box className="flex flex-col gap-5">
-          {/* Email Input */}
           <Box className="flex flex-col">
             <label className="text-sm font-semibold text-gray-700">
               Email:
@@ -73,7 +72,6 @@ const Login = () => {
             />
           </Box>
 
-          {/* Password Input */}
           <Box className="flex flex-col">
             <label className="text-sm font-semibold text-gray-700">
               Password
@@ -94,7 +92,6 @@ const Login = () => {
             />
           </Box>
 
-          {/* Sign In Buttons */}
           <Button
             size="lg"
             variant="solid"
@@ -105,7 +102,6 @@ const Login = () => {
           </Button>
         </Box>
 
-        {/* Signup Link */}
         <Typography
           className="text-center text-sm mt-6 text-gray-600 hover:text-pink-500 cursor-pointer transition duration-200"
           onClick={() => navigate("/signup", { state })}

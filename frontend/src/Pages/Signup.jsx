@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
-import { Box, Typography } from "@mui/material";
 import axios from "axios";
-import Input from "@mui/joy/Input";
-import { Button } from "@mui/joy";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import { Loader } from "../Components/Loader/Loader";
 
 const Signup = () => {
@@ -77,7 +73,6 @@ const Signup = () => {
               />
             </div>
 
-            {/* First Name Input */}
             <div className="flex flex-col">
               <label className="text-gray-700 font-semibold mb-1">
                 First Name:
@@ -96,7 +91,6 @@ const Signup = () => {
               />
             </div>
 
-            {/* Last Name Input */}
             <div className="flex flex-col">
               <label className="text-gray-700 font-semibold mb-1">
                 Last Name:
@@ -115,7 +109,6 @@ const Signup = () => {
               />
             </div>
 
-            {/* Password Input */}
             <div className="flex flex-col">
               <label className="text-gray-700 font-semibold mb-1">
                 Password:
@@ -134,7 +127,6 @@ const Signup = () => {
               />
             </div>
 
-            {/* Sign Up Button */}
             <button
               className="w-full py-3 mt-4 bg-pink-500 hover:bg-pink-400 text-white rounded-md shadow-lg transition duration-200"
               onClick={signupHandler}

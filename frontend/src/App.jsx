@@ -10,7 +10,6 @@ import { DataProvider } from "./Context/DataContext"; // Import DataProvider
 function App() {
   return (
     <AuthProvider>
-      {/* Wrap the entire Router in AuthProvider */}
       <DataProvider>
         <Router>
           <Routes>

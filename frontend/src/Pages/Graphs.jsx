@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import BarChart from "../Components/BarChart"; // You can customize this component as needed
-import LineChart from "../Components/LineChart"; // You can customize this component as needed
+import BarChart from "../Components/BarChart";
+import LineChart from "../Components/LineChart";
 import { useAuth } from "../Context/AuthContext";
 import { useFilter } from "../CustomHooks/useFilter";
 import { useData } from "../Context/DataContext";
@@ -18,7 +18,6 @@ const Graphs = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [loader, setLoader] = useState(true);
 
-  // Function to generate URL with query parameters
   const generateURL = () => {
     const queryParams = new URLSearchParams();
     if (state.gender) queryParams.set("gender", state.gender);
@@ -63,7 +62,7 @@ const Graphs = () => {
     document.cookie = "dateto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   };
 
-  // Fetch initial data
+  // Fetching initial data for app
   useEffect(() => {
     axios.get("http://localhost:5000/api/data").then((response) => {
       dispatch({
