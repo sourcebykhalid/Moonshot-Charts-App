@@ -18,6 +18,7 @@ const Graphs = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [loader, setLoader] = useState(true);
 
+  // Function to generate URL with query parameters
   const generateURL = () => {
     const queryParams = new URLSearchParams();
     if (state.gender) queryParams.set("gender", state.gender);
@@ -62,15 +63,18 @@ const Graphs = () => {
     document.cookie = "dateto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   };
 
-  // Fetching initial data for app
+  // Fetch initial data
   useEffect(() => {
-    axios.get("http://localhost:5000/api/data").then((response) => {
-      dispatch({
-        type: "INITIAL_DATA_FETCH",
-        payload: { data: response.data },
+    // const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    axios
+      .get(`https://moonshot-chartsapp.onrender.com/api/data`)
+      .then((response) => {
+        dispatch({
+          type: "INITIAL_DATA_FETCH",
+          payload: { data: response.data },
+        });
+        setLoader(false);
       });
-      setLoader(false);
-    });
 
     const queryParams = new URLSearchParams(location.search);
     const savedGender = queryParams.get("gender");

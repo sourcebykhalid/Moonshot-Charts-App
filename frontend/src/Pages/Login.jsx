@@ -18,12 +18,15 @@ const Login = () => {
   const handleLogin = async () => {
     setLoading(true);
     const { email, password } = loginDetails;
-
+    // const apiUrl = import.meta.env.VITE_API_BASE_URL;
     try {
-      const response = await axios.post("http://localhost:5000/users/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `https://moonshot-chartsapp.onrender.com/users/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       if (response.status === 200 || response.status === 201) {
         localStorage.setItem("userToken", response.data.token);
