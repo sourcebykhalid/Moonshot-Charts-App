@@ -9,7 +9,23 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "https://moonshot-datavista-408h.onrender.com",
+    "http://localhost:3000",
+  ],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Cross-Origin-Resource-Policy",
+  ],
+  exposedHeaders: ["Cross-Origin-Resource-Policy"],
+};
+app.use(cors(corsOptions));
 
 connectionFunc();
 
